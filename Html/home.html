@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Font-Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon Icons -->
+  <link rel="shortcut icon" href="../assets/github-logo.png" type="image/x-icon">
+  <!-- Output Css link -->
+  <link rel="stylesheet" href="../src/output.css">
+  <title>GitHub Issues Tracker</title>
+</head>
+
+<body>
+
+
+  <!-- Header And Hero Section -->
+  <header id="" class="">
+
+
+    <nav class="border-b border-gray-200">
+      <div class="containers flex gap-3 flex-wrap items-center justify-center sm:flex-row sm:justify-between">
+
+        <!-- Logo -->
+        <div class="flex gap-2 items-center">
+          <img src="../assets/github-logo.png" alt="img" class="w-10">
+          <h2 class="font-semibold text-lg">GitHub Issues Tracker</h2>
+        </div>
+
+        <!-- Btn  -->
+
+        <div class="flex flex-wrap justify-center items-center gap-3 sm:flex-row">
+
+          <!-- Search input -->
+          <div class="flex gap-2 items-center border-gray-300 border py-1 px-2 rounded-lg">
+            <img src="../assets/icons/icons.png" alt="img">
+            <input id="searchInputValue" type="text" placeholder="Search issues..." class="outline-none">
+          </div>
+
+
+          <div>
+            <button onclick="searchIssues()"
+              class="flex items-center bg-primary py-2 px-4 rounded-lg gap-2 text-white cursor-pointer max-w-max">
+              <!-- <img src="../assets/icons/Plus.png" alt="icons"> -->
+              Search
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+
+
+  </header>
+
+  <!-- Main Section -->
+  <main class="bg-[#F8FAFC] ">
+
+    <!-- Track and manage your project issues section -->
+    <section class="">
+      <div class="containers">
+
+        <!-- Button 3 and Issues Count section -->
+        <section class="space-y-3">
+
+          <!-- 3 button -->
+          <div class="flex gap-2 bg-white py-5 px-2 customShadow rounded-lg">
+            <div>
+              <button onclick="showAllIssues()" id="allButton" class="btnAll btn btn-primary">All</button>
+            </div>
+
+            <div>
+              <button onclick="showOpenIssues()" id="openButton" class="btn btnAll">Open</button>
+            </div>
+
+            <div>
+              <button onclick="showClosedIssues()" id="ClosedButton" class="btn btnAll">Closed</button>
+            </div>
+          </div>
+
+
+          <!-- 50 issues -->
+          <div
+            class="bg-white border-b py-3 px-2 border-[#e4e4e7] customShadow rounded-t-lg flex flex-col justify-center items-center sm:flex-row sm:justify-between">
+
+            <!-- left section -->
+            <div class="flex items-center gap-2">
+
+              <div class="bg-[#ECE4FF] max-w-max p-3 rounded-full cursor-pointer">
+                <img src="../assets/icons/issues.png" alt="icons">
+              </div>
+
+              <!-- detail -->
+              <div>
+                <h2 id="issuesCount" class="text-lg font-medium"></h2>
+                <p>Track and manage your project issues</p>
+              </div>
+
+            </div>
+
+            <!-- right section  -->
+            <div class="flex gap-4">
+              <div class="flex gap-2 items-center">
+                <p class=" bg-[#00A96E] p-1 rounded-full max-w-max"></p>
+                <p class="text-lg font-medium">Open</p>
+              </div>
+
+              <div class="flex gap-2 items-center">
+                <p class=" bg-[#A855F7] p-1 rounded-full max-w-max"></p>
+                <p class="text-lg font-medium">Closed</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- Card Section  -->
+        <Section id="" class="bg-[#FBFBFB] cardCustomShadow rounded-b-lg py-4">
+          <div class="containers">
+
+            <!-- card area -->
+            <div id="CardContainers"
+              class="px-3 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 items-stretch">
+
+              <!-- all Data render Open Closed And All -->
+
+            </div>
+
+          </div>
+        </Section>
+
+      </div>
+    </section>
+
+    <!-- loading section -->
+    <Section id="loadingSection" class="hidden">
+      <div class="containers flex items-center justify-center">
+        <span class="loading loading-spinner text-success"></span>
+      </div>
+    </Section>
+
+
+
+
+    <!-- Modal section -->
+    <div>
+
+      <dialog id="my_modal_4" class="modal">
+        <div id="modalContent" class="modal-box ">
+
+          <!-- data -->
+
+        </div>
+      </dialog>
+    </div>
+
+  </main>
+
+
+  </div>
+
+
+  <!-- Js link  -->
+  <script src="../Js/functionality.js"></script>
+
+
+
+</body>
+
+</html>
